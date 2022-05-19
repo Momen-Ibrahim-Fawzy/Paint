@@ -31,14 +31,17 @@ export default {
   position: fixed;
   z-index: 1;
   border: 1px solid black;
+  background-color: #e1fc6b;
+  border-radius: 10px;
   width: 100px;
 }
 #dialog-content {
   flex-direction: column;
   justify-content: space-around;
-  background-color: #fefefe;
+  background-color: #e1fc6b;
   border: 1px solid black;
   padding: 20px;
+  border-radius: 10px;
   display: inline-block;
 }
 #inputarea {
@@ -47,6 +50,12 @@ export default {
   min-height: 30px;
   min-width: 50px;
   max-width: 50px;
+  border-radius: 5px;
   display: inline-block;
+}
+
+button{
+  background-color: rgb(95, 106, 255);
+  border-radius: 20px;  
 }
 </style>

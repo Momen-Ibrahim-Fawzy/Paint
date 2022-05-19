@@ -13,60 +13,55 @@
     <button class="b" id="delete" @click="Delete()">Delete</button>
     <button class="b" id="undo" @click="Undo()">Undo</button>
     <button class="b" id="redo" @click="Redo()">Redo</button>
-    <button class="b" id="save" @click="Save()">Save</button>
-    <button class="b" id="sumbit" @click="Submit()">Submit</button>
-    <label>File
-        <input type="file" id="file" ref="file" accept="application/json, text/xml" @change="handleFileUpload()"/>
-    </label>
     <span class="palette">
       <button
         class="p"
         id="blue"
         style="background-color: blue"
-        @click="Blue()"
+        @click="SelectedColor('blue')"
       ></button>
-      <button class="p" id="red" style="background-color: red" @click="Red()"></button>
+      <button class="p" id="red" style="background-color: red" @click="SelectedColor('red')"></button>
       <button
         class="p"
         id="yellow"
         style="background-color: yellow"
-        @click="Yellow()"
+        @click="SelectedColor('yellow')"
       ></button>
       <button
         class="p"
         id="green"
         style="background-color: green"
-        @click="Green()"
+        @click="SelectedColor('green')"
       ></button>
       <button
         class="p"
         id="black"
         style="background-color: black"
-        @click="Black()"
+        @click="SelectedColor('black')"
       ></button>
       <button
         class="p"
         id="cyan"
         style="background-color: cyan"
-        @click="Cyan()"
+        @click="SelectedColor('cyan')"
       ></button>
       <button
         class="p"
         id="magenta"
         style="background-color: magenta"
-        @click="Magenta()"
+        @click="SelectedColor('magenta')"
       ></button>
       <button
         class="p"
         id="brown"
         style="background-color: brown"
-        @click="Brown()"
+        @click="SelectedColor('brown')"
       ></button>
       <button
         class="p"
         id="white"
         style="background-color: white"
-        @click="White()"
+        @click="SelectedColor('white')"
       ></button>
     </span>
   </div>
@@ -74,7 +69,7 @@
 <script>
 export default {
   name: "shapes",
-  data: function () {
+  data() {
     return {
       shape: null,
     };
@@ -95,7 +90,7 @@ export default {
     Delete() {
       this.$emit("Deleted");
     },
-    Circle: function () {
+    Circle() {
       this.shape = {
         type: "circle",
         x: [],
@@ -106,7 +101,7 @@ export default {
       };
       this.$emit("draw-shape", this.shape);
     },
-    Line: function () {
+    Line() {
       this.shape = {
         type: "line",
         x: [],
@@ -116,7 +111,7 @@ export default {
       };
       this.$emit("draw-shape", this.shape);
     },
-    Rectangle: function () {
+    Rectangle() {
       this.shape = {
         type: "rectangle",
         x: [],
@@ -128,7 +123,7 @@ export default {
       };
       this.$emit("draw-shape", this.shape);
     },
-    Square: function () {
+    Square() {
       this.shape = {
         type: "square",
         x: [],
@@ -139,7 +134,7 @@ export default {
       };
       this.$emit("draw-shape", this.shape);
     },
-    Triangle: function () {
+    Triangle() {
       this.shape = {
         type: "triangle",
         x: [],
@@ -149,7 +144,7 @@ export default {
       };
       this.$emit("draw-shape", this.shape);
     },
-    Ellipse: function () {
+    Ellipse() {
       this.shape = {
         type: "ellipse",
         x: [],
@@ -162,50 +157,14 @@ export default {
       };
       this.$emit("draw-shape", this.shape);
     },
-    Undo: function () {
+    Undo() {
       this.$emit("undo-shape");
     },
-    Redo: function () {
+    Redo() {
       this.$emit("redo-shape");
-      
     },
-    Save:function(){
-        this.$emit('save-dialog');
-        },
-    Submit:function(){
-        this.$emit('submitUpload');
-    },
-    handleFileUpload:function(){
-        this.uploadedFile =this.$refs.file.files[0];
-        console.log(this.uploadedFile.type)
-        this.$emit('load-File',this.uploadedFile);
-    },
-    Red: function () {
-      this.$emit("Colored", "red");
-    },
-    Blue: function () {
-      this.$emit("Colored", "blue");
-    },
-    Yellow: function () {
-      this.$emit("Colored", "yellow");
-    },
-    Green: function () {
-      this.$emit("Colored", "green");
-    },
-    Black: function () {
-      this.$emit("Colored", "black");
-    },
-    Cyan: function () {
-      this.$emit("Colored", "cyan");
-    },
-    Magenta: function () {
-      this.$emit("Colored", "magenta");
-    },
-    Brown: function () {
-      this.$emit("Colored", "brown");
-    },
-    White: function () {
-      this.$emit("Colored", "white");
+    SelectedColor(TheColor){
+      this.$emit("Colored", TheColor);
     },
   },
 };
@@ -215,14 +174,14 @@ export default {
   background-image: linear-gradient(-45deg, cyan, magenta);
   border-radius: 20px;
   margin-top: 1px;
-  width: 10%;
+  width: 150px;
 }
 
 .b {
   margin: auto;
   margin-top: 10px;
   margin-bottom: 5px;
-  width: 50%;
+  width: 50px;
   height: 30px;
   background-color: linear-gradient(
     -100deg,
@@ -233,10 +192,9 @@ export default {
   border-radius: 20px;
 }
 .p {
-  margin-top: 5px;
-  margin-bottom: 5px;
-  width: 30%;
-  height: 50%;
+  margin-bottom: 2px;
+  width: 30px;
+  height: 30px;
   background-color: linear-gradient(
     -100deg,
     rgb(108, 35, 168),
