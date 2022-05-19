@@ -1,4 +1,4 @@
-package eg.edu.alexu.csd.oop.draw;
+package com.painter.backendpaint;
 
 public class Node {
     /**

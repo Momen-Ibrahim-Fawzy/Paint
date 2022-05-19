@@ -1,4 +1,4 @@
-package eg.edu.alexu.csd.oop.draw;
+package com.painter.backendpaint;
 
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.databind.ObjectMapper;
