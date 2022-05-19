@@ -12,8 +12,8 @@
           <div style="margin:20px">
             <h2>Quick Links</h2>
             <ul class="footer-links">
-              <li><a href="https://github.com/samniss/DrawingWebApp" style="font-size: 15px">About Us</a></li>
-              <li><a href="https://github.com/samniss/DrawingWebApp" style="font-size: 15px">Contact Us</a></li>
+              <li><a href="https://github.com/samniss/DrawingWebApp" style="font-size: 15px">About Us</a></li> <!-- Mohamed elSamni Repo -->
+              <li><a href="https://github.com/MohamedMetwalli5/Paint" style="font-size: 15px">Contact Us</a></li> <!-- My Repo (Mohamed Metwalli) -->
             </ul>
           </div>
         </div>
@@ -23,7 +23,7 @@
         <div class="row">
           <div style="margin:20px">
             <p class="copyright-text">Copyright &copy; 2020 All Rights Reserved by 
-             <a href="https://github.com/samniss/DrawingWebApp">DrawingWebApp</a>.
+             <a href="https://github.com/MohamedMetwalli5/Paint">Paint</a>. <!-- My Repo (Mohamed Metwalli) -->
             </p>
           </div>
         </div>
