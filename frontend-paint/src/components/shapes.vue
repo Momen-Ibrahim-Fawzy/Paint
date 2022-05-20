@@ -1,11 +1,11 @@
 <template>
   <div class="ButtonsGroup">
-    <button class="b" id="line" @click="Line()">____</button>
-    <button class="b" id="circle" @click="Circle()">&#9711;</button>
-    <button class="b" id="rectangle" @click="Rectangle()">&#9645;</button>
-    <button class="b" id="square" @click="Square()">&#8414;</button>
-    <button class="b" id="triangle" @click="Triangle()">&#8420;</button>
-    <button class="b" id="ellipse" @click="Ellipse()">&#11055;</button>
+    <button class="b" id="line" @click="Shape('line')">____</button>
+    <button class="b" id="circle" @click="Shape('circle')">&#9711;</button>
+    <button class="b" id="rectangle" @click="Shape('rectangle')">&#9645;</button>
+    <button class="b" id="square" @click="Shape('square')">&#8414;</button>
+    <button class="b" id="triangle" @click="Shape('triangle')">&#8420;</button>
+    <button class="b" id="ellipse" @click="Shape('ellipse')">&#11055;</button>
     <button class="b" id="select" @click="Select()">Select</button>
     <button class="b" id="move" @click="Move()">Move</button>
     <button class="b" id="copy" @click="Copy()">Copy</button>
@@ -90,72 +90,69 @@ export default {
     Delete() {
       this.$emit("Deleted");
     },
-    Circle() {
-      this.shape = {
-        type: "circle",
-        x: [],
-        y: [],
-        radius: 0,
-        id: 0,
-        color: "white",
-      };
-      this.$emit("draw-shape", this.shape);
-    },
-    Line() {
-      this.shape = {
-        type: "line",
-        x: [],
-        y: [],
-        id: 0,
-        color: "white",
-      };
-      this.$emit("draw-shape", this.shape);
-    },
-    Rectangle() {
-      this.shape = {
-        type: "rectangle",
-        x: [],
-        y: [],
-        width: 0,
-        height: 0,
-        id: 0,
-        color: "white",
-      };
-      this.$emit("draw-shape", this.shape);
-    },
-    Square() {
-      this.shape = {
-        type: "square",
-        x: [],
-        y: [],
-        side: 0,
-        id: 0,
-        color: "white",
-      };
-      this.$emit("draw-shape", this.shape);
-    },
-    Triangle() {
-      this.shape = {
-        type: "triangle",
-        x: [],
-        y: [],
-        id: 0,
-        color: "white",
-      };
-      this.$emit("draw-shape", this.shape);
-    },
-    Ellipse() {
-      this.shape = {
-        type: "ellipse",
-        x: [],
-        y: [],
-        radiusX: 0,
-        radiusY: 0,
-        rotationAngle: 0,
-        id: 0,
-        color: "white",
-      };
-      this.$emit("draw-shape", this.shape);
+    Shape(shape){
+      if(shape === "circle"){
+        this.shape = {
+                type: shape,
+                x: [],
+                y: [],
+                radius: 0,
+                id: 0,
+                color: "white",
+              };
+              this.$emit("draw-shape", this.shape);
+      }else if(shape === "line"){
+        this.shape = {
+                type: "line",
+                x: [],
+                y: [],
+                id: 0,
+                color: "white",
+              };
+              this.$emit("draw-shape", this.shape);
+      }else if(shape === "rectangle"){
+        this.shape = {
+                type: "rectangle",
+                x: [],
+                y: [],
+                width: 0,
+                height: 0,
+                id: 0,
+                color: "white",
+              };
+              this.$emit("draw-shape", this.shape);
+      }else if(shape === "square"){
+        this.shape = {
+                type: "square",
+                x: [],
+                y: [],
+                side: 0,
+                id: 0,
+                color: "white",
+              };
+              this.$emit("draw-shape", this.shape);
+      }else if(shape === "triangle"){
+        this.shape = {
+                type: "triangle",
+                x: [],
+                y: [],
+                id: 0,
+                color: "white",
+              };
+              this.$emit("draw-shape", this.shape);
+      }else if(shape === "ellipse"){
+        this.shape = {
+                type: "ellipse",
+                x: [],
+                y: [],
+                radiusX: 0,
+                radiusY: 0,
+                rotationAngle: 0,
+                id: 0,
+                color: "white",
+              };
+              this.$emit("draw-shape", this.shape);
+      } 
     },
     Undo() {
       this.$emit("undo-shape");

@@ -10,9 +10,7 @@ public class Square extends OnePointShape{
     Square(){
         setType("square");
     }
-    Number side;
-
-    
+    Number side;    
 
     public Number getSide() {
         return side;

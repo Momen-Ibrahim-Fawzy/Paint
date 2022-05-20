@@ -4,7 +4,7 @@ import java.util.EmptyStackException;
 
 
 /***
- * The class is an implementation of the stack datastructure
+ * The class is an implementation of the stack data structure
  * 
  * 
  *
