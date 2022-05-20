@@ -4,7 +4,7 @@
 # Web-Based Drawing Program
 
 ## Features
-  * User can draw multiple shapes with different colors.
+  * User can draw multiple shapes with different colours.
   * User can change the shape color, position, and size.
   * User can replicate shapes using the ”copy” operation.
   * User can use the ”undo” or the ”redo” operation to undo or redo any action. 
